@@ -1,0 +1,10 @@
+LICENCE
+README.md
+setup.py
+tableautransformer/__init__.py
+tableautransformer/backbone.py
+tableautransformer/datawrangling.py
+tableautransformer.egg-info/PKG-INFO
+tableautransformer.egg-info/SOURCES.txt
+tableautransformer.egg-info/dependency_links.txt
+tableautransformer.egg-info/top_level.txt
