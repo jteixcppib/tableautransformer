@@ -8,6 +8,7 @@ def basic_table(read_path, read_type='csv', sheet_name=None, columns_to_keep='al
                 filters=None, group_by=None, aggregate_columns=None, pre_agg_math_columns=None, 
                 post_agg_math_columns=None, remove_NAN=True, remove_NAN_col='all'):
     
+    # reading in basics
     if read_type == 'csv':
         df_basic_table = pd.read_csv(read_path)
     elif read_type == 'excel':
@@ -15,14 +16,16 @@ def basic_table(read_path, read_type='csv', sheet_name=None, columns_to_keep='al
     else:
         print('read_type must be either "csv" or "excel"')
     
+    # columns
     if columns_to_keep != 'all':
         df_basic_table = df_basic_table[columns_to_keep]
     if columns_rename is not None:
         df_basic_table.columns = columns_rename
-    
+
+    # remove nan
     if remove_NAN:
         if remove_NAN_col == 'all':
-            df_basic_table = df_basic_table[df_basic_table[columns_rename].notna()]
+            df_basic_table = df_basic_table.notna()
         else:
             for col in remove_NAN_col:
                 df_basic_table = df_basic_table[df_basic_table[col].notna()]
