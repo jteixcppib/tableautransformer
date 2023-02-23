@@ -25,7 +25,7 @@ def basic_table(read_path, read_type='csv', sheet_name=None, columns_to_keep='al
     # remove nan
     if remove_NAN:
         if remove_NAN_col == 'all':
-            df_basic_table = df_basic_table.notna()
+            df_basic_table = df_basic_table[df_basic_table.notna()]
         else:
             for col in remove_NAN_col:
                 df_basic_table = df_basic_table[df_basic_table[col].notna()]
