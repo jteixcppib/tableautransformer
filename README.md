@@ -2,6 +2,9 @@
 *ETL tooling for preparing tableau seed data*
 ***
 
+> **Warning**
+> Known error with export when exporting one file
+
 ## Description
 
 This library was built with the intentions of enhancing the experience of data wrangling for tableau.
