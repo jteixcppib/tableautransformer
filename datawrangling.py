@@ -56,6 +56,11 @@ def basic_table(read_path, read_type='csv', sheet_name=None, columns_to_keep='al
             df_basic_table[new_column_name] = df_basic_table.eval(math_expression)
     return df_basic_table
 
+def find_dtypes(df):
+    for col in df.columns:
+        datatypes = set(df[col].dtype for i in df[col])
+        print(f'{col}: {list(datatypes)}')
+
 def is_in(df, target_col, isin_list):
     df = df[df[target_col].isin(isin_list)]
     return df
