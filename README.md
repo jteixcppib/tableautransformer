@@ -2,8 +2,6 @@
 *ETL tooling for preparing tableau seed data*
 ***
 
-> **Warning**
-> Known error with export when exporting one file
 
 ## Description
 
