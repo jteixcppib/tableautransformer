@@ -1,7 +1,6 @@
 # TableauTransformer
-*ETL tooling for preparing tableau seed data*
+*ETL tooling for preparing tableau and dashboard seed data*
 ***
-
 
 ## Description
 
@@ -10,7 +9,7 @@ Tableau can be very particular about the data it reads from.
 In addition preparing data to fit the shape for different graphs can be time consuming.
 TableauTransformer can be used to hurdle over these two barriers.
 
-Github Repo https://github.com/jteixcppib/tableautransformer
+PyPi: https://pypi.org/project/tableautransformer/
 
 ## Dependencies
 
@@ -138,6 +137,43 @@ find_dtypes(df)
 ##### Description
 
 For each column in the DataFrame print the dtypes present inside the series.
+
+##### Inputs
+
+> **df**: *dataframe*
+>> The DataFrame you want to loop through
+
+***
+
+### Find_Dups()
+
+```
+find_dups(df, name)
+```
+
+##### Description
+
+Find duplicate records and print them out inside a given df, duplicates must be duplicates accross all columns.
+
+##### Inputs
+
+> **df**: *dataframe*
+>> The DataFrame you want to loop through
+
+> **name**: *string*
+>> The name that will be printed for reference in the log
+
+***
+
+### Force_String()
+
+```
+force_string(df)
+```
+
+##### Description
+
+Force all scalar data to be strings in a given dataframe.
 
 ##### Inputs
 
