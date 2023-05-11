@@ -1,5 +1,5 @@
 # TableauTransformer
-*ETL tooling for preparing tableau and dashboard seed data*
+*ETL tooling for preparing tableau seed data*
 ***
 
 ## Description
@@ -173,7 +173,24 @@ force_string(df)
 
 ##### Description
 
-Force all scalar data to be strings in a given dataframe.
+Force all scalar data to be strings in a given dataframe, mitigates float percision error for database upload.
+
+##### Inputs
+
+> **df**: *dataframe*
+>> The DataFrame you want to loop through
+
+***
+
+### Force_Object()
+
+```
+force_object(df)
+```
+
+##### Description
+
+Force all series to be of type object, mitigates merge fail.
 
 ##### Inputs
 
