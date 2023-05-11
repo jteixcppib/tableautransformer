@@ -61,7 +61,6 @@ def find_dtypes(df):
         datatypes = set(df[col].dtype for i in df[col])
         print(f'{col}: {list(datatypes)}')
 
-# this is new, add md
 def find_dups(df, name):
     duplicated = df.duplicated(subset=df.columns)
     print('-----------------------------------------------')
@@ -69,11 +68,14 @@ def find_dups(df, name):
     print(df[duplicated])
     print('-----------------------------------------------')
 
-# this is new, add md
 def force_string(df):
     for col in df.columns:
         df[col] = df[col].astype(str)
         df[col] = df[col].replace(0,'')
+
+def force_object(df):
+    for col in df.columns:
+        df[col] = df[col].astype(object)
 
 def is_in(df, target_col, isin_list):
     df = df[df[target_col].isin(isin_list)]
