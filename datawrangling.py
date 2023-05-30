@@ -87,8 +87,10 @@ def cast(df, target_col, value):
 
 def export(file_name, tables):
     with pd.ExcelWriter(file_name) as writer:
-        for tab_name, df_name in tables.items():
-            df_name.to_excel(writer, sheet_name=tab_name, index=False)
+        for key in tables.keys():
+            tab_name = key
+            tab_df = tables[key]
+            tab_df.to_excel(writer, sheet_name=tab_name, index=False)
     return print(f"Data written too {file_name}")
 
 def create_row(): # might not be needed, if so it will be a create row with filter and col_ops
